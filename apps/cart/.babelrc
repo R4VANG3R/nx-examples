@@ -1,6 +1,29 @@
 {
-  "presets": [
-    "@nrwl/react/babel"
-  ],
-  "plugins": []
+  "presets": ["@nrwl/react/babel"],
+  "env": {
+    "development": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "pure": true,
+            "ssr": true,
+            "displayName": true
+          }
+        ]
+      ]
+    },
+    "production": {
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "pure": true,
+            "ssr": true,
+            "displayName": false
+          }
+        ]
+      ]
+    }
+  }
 }
